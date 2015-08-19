@@ -181,7 +181,7 @@ Similarly, go through and replace the `<input type="text">` with dropdowns for:
 
  - dishes#edit: `cuisine_id`
  - venues#new and venues#edit: `neighborhood_id`
- - favorites#new and favorites#edit: `user_id`, `dish_id`, and `neighborhood_id`
+ - favorites#new and favorites#edit: `user_id`, `dish_id`, and `venue_id`
 
 Now, if you want to, you can easily add a few of your own venues, dishes, and favorites. Before we added the dropdowns, it would have been hard.
 
