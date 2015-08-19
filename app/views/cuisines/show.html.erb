@@ -10,6 +10,20 @@
 
     </dl>
 
+      <dt>Dishes</dt>
+      <dd>
+      <ul class="list-group">
+        <% Dish.where(:cuisine_id => @cuisine.id).each do |dishes| %>
+        <li class="list-group-item">
+          <%= dishes.name %>
+        </li>
+        <% end %>
+      </ul>
+      </dd>
+
+
+
+
     <div class="btn-group btn-group-justified">
       <a href="/cuisines" class="btn btn-primary">
         Back

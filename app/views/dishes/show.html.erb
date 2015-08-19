@@ -9,9 +9,29 @@
       <dd><%= @dish.name %></dd>
 
       <dt>Cuisine</dt>
-      <dd><%= @dish.cuisine_id %></dd>
+      <dd><%= @dish.cuisine.name %></dd>
 
     </dl>
+
+
+
+<!-- favorite dishes; print venue names and usernames -->
+
+<dt>Favorites</dt>
+      <dd>
+        <ul class="list-group">
+        <% Favorite.where(:dish_id => @dish.id).each do |favorites| %>
+          <li class="list-group-item">
+            <%= dishes.name %> (<%= venue.name %>)
+          </li>
+        <% end %>
+        </ul>
+      </dd>
+
+
+<button class="btn btn-success">
+  Create Favorite
+</button>
 
     <div class="btn-group btn-group-justified">
       <a href="/dishes" class="btn btn-primary">
@@ -26,3 +46,6 @@
     </div>
   </div>
 </div>
+
+
+
