@@ -12,7 +12,7 @@
       <dt>Favorites</dt>
       <dd><ul class="list-group">
       <% @user.favorites.each do |favorite| %>
-      <li classs="list-group-item">
+      <li class="list-group-item">
       <%= favorite.dish.name %> at <%= favorite.venue.name %>
       </li>
       <% end %>

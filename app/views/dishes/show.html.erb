@@ -17,16 +17,22 @@
 
 <!-- favorite dishes; print venue names and usernames -->
 
-<dt>Favorites</dt>
-      <dd>
-        <ul class="list-group">
-        <% Favorite.where(:dish_id => @dish.id).each do |favorites| %>
-          <li class="list-group-item">
-            <%= dishes.name %> (<%= venue.name %>)
-          </li>
-        <% end %>
-        </ul>
+<div class="row">
+  <div class="col-md-12">
+    <dl class="dl-horizontal">
+      <dt>Dish</dt>
+      <dd><%= @dish.name %></dd>
+      <dt>Favorites</dt>
+      <dd><ul class="list-group">
+      <% @dish.favorites.each do |favorite| %>
+      <li class="list-group-item">
+      <%= favorite.venue.name %> : <%= favorite.user.id %>
+      </li>
+      <% end %>
+      </ul>
       </dd>
+      </dl>
+      </div>
 
 
 <button class="btn btn-success">
